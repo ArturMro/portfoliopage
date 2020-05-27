@@ -28,6 +28,11 @@ ul{
     list-style-type: none;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
 /************************ paralax background ***************************/
 .wrapper{
     background: url(../images/paralanx_front.png) no-repeat;
@@ -35,6 +40,7 @@ ul{
     background-position: center center;
     background-attachment: fixed;
     width: 100%;
+    /*height: 100vh;*/ 
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -45,6 +51,8 @@ ul{
 .wrapper::before{
     background: url(../images/paralanx_back.png) no-repeat;
     z-index: -2;
+    
+    
 }
 
 .wrapper::after{
@@ -52,18 +60,20 @@ ul{
     background-repeat: repeat-x;
     z-index: -1;
     animation: sky 10s linear infinite;
+    
 }
 
 .wrapper::before, .wrapper::after{
     content: '';
     height: 100%;
-    width: 100vw;
+    width: 100%;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     position: absolute;
     top: 0;
     left: 0;
+    
 }
 
 @keyframes sky {
@@ -177,6 +187,7 @@ footer{
     bottom: 0;
     height: 2em;
     width: 100%;
+    margin-top: 2em;   /*for IE11*/
 }
 
 footer p{
@@ -234,7 +245,7 @@ footer p{
 /*********************************  about page  *********************************/
 
 .about_cont{
-    padding: 1em;
+    padding: 2em 1em;
     background-image: linear-gradient(90deg, rgba(255, 255, 255, 0),rgba(255, 255, 255, .2),rgba(255, 255, 255, .2),rgba(255, 255, 255, 0)),
                       linear-gradient(180deg, rgba(255, 255, 255, 0),rgba(255, 255, 255, .2),rgba(255, 255, 255, .2),rgba(255, 255, 255, 0));
 }
@@ -250,6 +261,7 @@ footer p{
 
 
 /*********************************  work page  *********************************/
+
 .projectsCont{
     display: flex;
     flex-direction: column;
@@ -280,6 +292,7 @@ footer p{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 }
 
 .blogs{
@@ -337,18 +350,46 @@ textarea{
     height: 6em;
 }
 
-.fab{
-    font-size: 4em;
-    margin: .125em;
+
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-linkedin, .git_big, .fas{
+    font-size: 3em;
+    margin-right: .25em;
 }
 
 .fa-linkedin{
-    color:rgb(0,119,181);
+    color:rgb(2, 98, 150);
+    
 }
 .fa-github-square{
     color:rgb(36,41,46);
 }
 
+.cv_cont{
+    display: inline-block;
+    height: 2.65em;
+    width: 2.65em;
+    background-color: rgb(100, 25, 25);
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin-right: .5em;
+}
+.cv_cont a{
+    display: inline-block;
+   font-size: 1.75em;
+   font-weight: bold;
+   color: white;
+   padding-top: 5px;
+}
+
+.fa-envelope-square{
+
+}
 
 
 /*============================================================================================
@@ -449,6 +490,8 @@ textarea{
     /******** home page **********/
     .hello{
         width: 80%;
+        margin-bottom: 10em;  /*for IE11*/
+        margin-top: 5em;   /*for IE11*/
     }
     .hello span::after{
         font-size: 3vw;
@@ -526,11 +569,20 @@ textarea{
     .general_content h1{
         font-size: 3vw;
     }
-
+    /*home page*/
     .hello span::after{
         font-size: 2.2vw;
     }
 
+    .hello{   
+        margin-top: 7em;  /*for IE11*/
+        margin-bottom: 15em;   /*for IE11*/
+    }
+    /*blog page*/
+    .blogCont{
+        width: 80%;
+        margin: 0 auto;
+    }
 
 }
 
